@@ -1,0 +1,2 @@
+class OfferList < ApplicationRecord
+end
