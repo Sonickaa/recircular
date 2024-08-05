@@ -1,10 +1,9 @@
 class CreateOffers < ActiveRecord::Migration[7.1]
   def change
     create_table :offers do |t|
-      t.integer :user_sender_id
-      t.integer :user_receiver_id
+      t.references :user_sender, null: false, foreign_key: { to_table: :users }
+      t.references :user_receiver, null: false, foreign_key: { to_table: :users }
       t.string :status
-
       t.timestamps
     end
   end

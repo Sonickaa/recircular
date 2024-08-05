@@ -1,9 +1,8 @@
 class CreateUserCategories < ActiveRecord::Migration[7.1]
   def change
     create_table :user_categories do |t|
-      t.integer :user_id
-      t.integer :category_id
-
+      t.references :user, null: false, foreign_key: true
+      t.references :category, null: false, foreign_key: true
       t.timestamps
     end
   end
