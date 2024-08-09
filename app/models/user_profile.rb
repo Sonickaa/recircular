@@ -1,3 +1,3 @@
 class UserProfile < ApplicationRecord
-  has_one :users
+  has_one :user
 end

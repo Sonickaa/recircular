@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root to: "pages#home"
+  root to: "products#index"
+
+  resources :products, only: [:index, :new, :create, :edit, :update]
+  get "products/my_products", to: "products#my_products"
+  get "products/user_products", to: "products#user_products"
 
   get "category", to: "categories#index"
   get "category/new", to: "categories#new"
