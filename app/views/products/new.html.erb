@@ -1,0 +1,15 @@
+<div class="container">
+
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.input :category, collection: Category.all, prompt: "Select Category" %>
+    <%= f.input :product_picture %>
+    <%= f.input :product_title, prompt: "Give your product a nice title!" %>
+    <%= f.input :product_condition%>
+    <%= f.input :product_description, as: :text, input_html: { rows: 3 , class: 'input-card' }%>
+
+      <div class="button">
+        <%= f.submit class: "btn sec-btn" %>
+      </div>
+
+  <% end %>
+</div>

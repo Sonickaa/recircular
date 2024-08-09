@@ -1,4 +1,4 @@
 class OfferList < ApplicationRecord
-  belongs_to :offers
+  belongs_to :offer
   has_many :products
 end
