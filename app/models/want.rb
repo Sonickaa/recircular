@@ -1,4 +1,4 @@
 class Want < ApplicationRecord
-  belong_to :users
+  belong_to :user
   has_many :products
 end
