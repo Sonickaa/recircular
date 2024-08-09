@@ -12,4 +12,9 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:name])
     @category.save!
   end
+
+  def destroy
+    @category.find(params[:id])
+    @category.destroy
+  end
 end
