@@ -1,3 +1,9 @@
+<div>
+  <%= current_user.user_profile.first_name %>
+  <%= link_to "See my Products", products_my_products_path %>
+  <%= link_to "See my Chats", chats_path %>
+</div>
+
 <div class="container">
   <% @products.each do |prod| %>
     <%= render "prod_card", prod: prod%>

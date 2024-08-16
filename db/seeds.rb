@@ -9,8 +9,11 @@
 #   end
 
 User.destroy_all
+p "Users destroyed"
 Category.destroy_all
+p "Categories destroyed"
 Product.destroy_all
+p "Products destroyed"
 
 
 

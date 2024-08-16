@@ -13,6 +13,7 @@
       <% end %>
     </div>
   </div>
+  <%= link_to prod.user.user_profile.first_name, user_profile_path(prod.user.user_profile.id) %>
   <div class="prod-content">
       <h2> <%= prod.category.name %> </h2>
       <%= prod.product_picture %>

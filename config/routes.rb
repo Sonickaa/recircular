@@ -30,13 +30,14 @@ Rails.application.routes.draw do
   post "want", to: "wants#create"
   delete "want/:id", to: "wants#destroy"
 
-  get "chat", to: "chats#index"
-  get "chat/:id", to: "chats#show"
+  get "chats", to: "chats#index"
+  get "chat_with_me/:id", to: "chats#find_or_create", as: :chat_with_me
+  get "chat/:id", to: "chats#show", as: :chat_show
   post "chat", to: "chats#create"
   delete "chat/:id", to: "chats#destroy"
 
   # get "user_profile", to: "user_profiles#index"
-  # get "user_profile/:id", to: "user_profiles#show"
+  get "user_profile/:id", to: "user_profiles#show", as: :user_profile
   # get "user_profile/new", to: "user_profiles#new"
   # post "user_profile", to: "user_profiles#create"
   # delete "user_profile/:id", to: "user_profiles#destroy"

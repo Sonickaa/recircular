@@ -1,0 +1,31 @@
+<div class="container">
+  <% @chats.each do |chat| %>
+    <div class="chat">
+      <div class="card-header flex-row align-items-center">
+        <div class="date">
+          <% if chat.last_message %>
+            <%time = (Time.now - chat.last_message)  %>
+            <% if time < 60 %>
+              <%= "#{time.floor(0)} seconds ago" %>
+            <% elsif time < 60*60 %>
+              <%= "#{(time/60).floor(0)} minutes ago" %>
+            <% elsif time < 60*60*24 %>
+              <%= "#{(time/60/60).floor(0)} hours ago" %>
+            <% else %>
+              <%= "#{(time/60/60/24).floor(0)} days ago" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="chat-content">
+        <% if chat.user_receiver_id == current_user.id %>
+          <h2> <%= chat.user_sender.user_profile.first_name %> </h2>
+        <% else %>
+          <h2> <%= chat.user_receiver.user_profile.first_name %> </h2>
+        <% end %>
+        <br>
+        <br>
+      </div>
+    </div>
+  <% end %>
+</div>

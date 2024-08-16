@@ -1,0 +1,15 @@
+<div>
+  <%= @user_profile.first_name %>
+  <% if @user_profile != current_user.user_profile %>
+    <%= link_to "Chat with me!", chat_with_me_path(@user_profile.user.id) %>
+  <% end %>
+
+
+
+  <div class="container">
+    <% @user_profile.user.products.each do |prod| %>
+      <%= render "products/prod_card", prod: prod%>
+    <% end %>
+  </div>
+
+</div>
